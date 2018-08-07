@@ -1,7 +1,9 @@
 package com.dannextech.apps.studentemergencycallcentre;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,10 +43,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
+
     }
 
     @Override
     public void onClick(View v) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
         switch (v.getId()){
             case R.id.ivbAdminCall:
                 Uri numberAdmin = Uri.parse("tel:0799119911");
@@ -96,12 +102,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btAdminMsg:
                 startActivity(new Intent(getApplicationContext(),SendMessage.class));
+                editor.putString("phone","0799119911");
+                editor.apply();
                 break;
             case R.id.btHealthMsg:
                 startActivity(new Intent(getApplicationContext(),SendMessage.class));
+                editor.putString("phone","0787654321");
+                editor.apply();
                 break;
             case R.id.btSecurityMsg:
                 startActivity(new Intent(getApplicationContext(),SendMessage.class));
+                editor.putString("phone","0712345678");
+                editor.apply();
                 break;
                 default:
                     Snackbar.make(v,"Function not working",Snackbar.LENGTH_SHORT).show();
