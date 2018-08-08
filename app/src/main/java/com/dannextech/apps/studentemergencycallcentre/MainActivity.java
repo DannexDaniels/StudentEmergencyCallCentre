@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btHealthMsg = findViewById(R.id.btHealthMsg);
         btSecurityMsg = findViewById(R.id.btSecurityMsg);
 
-        ivbHealthMail.setOnClickListener(this);
-        ivbHealthCall.setOnClickListener(this);
+        ivbAdminMail.setOnClickListener(this);
+        ivbAdminCall.setOnClickListener(this);
         ivbSecurityMail.setOnClickListener(this);
         ivbSecurityCall.setOnClickListener(this);
         ivbHealthCall.setOnClickListener(this);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ivbAdminMail:
                 Intent intentAdmin = new Intent(Intent.ACTION_SEND);
                 intentAdmin.setType("text/plain");
-                intentAdmin.putExtra(Intent.EXTRA_EMAIL,new String[]{"admin@mmust.ac.ke"});
+                intentAdmin.putExtra(Intent.EXTRA_EMAIL,new String[]{"colowen42@yahoo.com"});
                 intentAdmin.putExtra(Intent.EXTRA_SUBJECT,"REPORTING AN ISSUE");
                 intentAdmin.putExtra(Intent.EXTRA_TEXT,"I am reporting an issue that ...");
                 try{

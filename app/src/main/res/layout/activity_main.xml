@@ -91,7 +91,7 @@
                                 android:layout_weight="4"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_gravity="center_vertical"
-                                android:text="health@mmust.ac.ke"/>
+                                android:text="colowen42@yahoo.com"/>
                             <ImageButton
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
